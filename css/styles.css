@@ -94,15 +94,16 @@ body {
     display: inline-block;
 }
 
-.studio-link a {
+.curent-page a {
     position: relative;
     color: var(--pressed-state);
     overflow: visible;
 
 
+
 }
 
-.studio-link a::after {
+.curent-page a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -115,6 +116,7 @@ body {
 
 
 }
+
 
 
 
@@ -155,8 +157,7 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text);
-    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .mail-adress a:hover {
@@ -232,7 +233,7 @@ body {
     border: none;
     border-radius: 4px;
     margin: 48px auto 0;
-    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -429,7 +430,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-icon:hover,
@@ -489,7 +490,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color, 250ms, cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .costumers-logo-container:hover,
@@ -668,8 +670,8 @@ img {
 
 }
 
-.portfolio-link .portfolio-overlay-content:hover,
-.portfolio-link .portfolio-overlay-content:focus {
+.portfolio-link:hover .portfolio-overlay-content,
+.portfolio-link:focus .portfolio-overlay-content {
     transform: translateY(0%);
 
 
@@ -720,11 +722,13 @@ img {
     height: 100%;
 
     background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 .modal {
@@ -750,22 +754,25 @@ img {
     width: 24px;
     border-radius: 50%;
     background-color: var(--accent);
-    border-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--dark);
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
 }
 
 .close-modal:hover,
 .close-modal:focus {
     background-color: var(--pressed-state);
     color: var(--white-bg);
+    border: none;
 
 }
 
 .close-modal-icon {
     fill: currentColor;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
